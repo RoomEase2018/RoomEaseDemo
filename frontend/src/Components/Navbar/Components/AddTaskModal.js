@@ -11,6 +11,19 @@ import ActionDone from 'material-ui/svg-icons/action/done';
 import { orange500, blue500 } from 'material-ui/styles/colors';
 import "../Styles/ModalStyles.css";
 
+import { insertTask } from "../../Dashboard/Actions/DashboardActions";
+import { connect } from "react-redux";
+
+const mapDispatchToProps = dispatch => {
+    return {
+    insertTask: task => {
+      dispatch(insertTask(task));
+    }
+  }
+}
+
+
+
 const styles = {
     errorStyle: {
         color: orange500,
@@ -36,6 +49,15 @@ const tasks = [
 ];
 
 class AddTaskModal extends React.Component {
+
+    onSubmit = () => {
+        this.props.insertTask({
+            title: 'buy shampoo',
+            karma: 10,
+            to_user_id: 1
+        })
+    }
+
     render() {
         const { active, task, roommates, assignedRoommates, handleClose, handleChange, selectedDate, handleDate } = this.props;
         return (
@@ -76,6 +98,7 @@ class AddTaskModal extends React.Component {
                         label="Submit"
                         primary={true}
                         icon={<ActionDone />}
+                        onClick={this.}
                     />
                 </Paper>
             </div>
@@ -83,4 +106,5 @@ class AddTaskModal extends React.Component {
     }
 }
 
-export default AddTaskModal;
+export default connect(mapDispatchToProps)(AddTaskModal);
+// export default AddTaskModal;

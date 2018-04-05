@@ -1,12 +1,13 @@
 import {
   SET_ALL_ACTIVE_TASKS,
-  SET_ALL_ACTIVE_RECURRING_TASKS,
+  SET_ALL_ACTIVE_RECURRING_TASKS, 
   SET_ALL_VISIBLE_NOTES,
   SET_ALL_ACTIVE_GOALS,
   PUSH_SUCCESS_QUERY_ARRAY,
   SET_ALL_COMPLETED_TASKS,
   SET_SORTED_TASKS,
-  UPDATE_SORTED_TASKS
+  UPDATE_SORTED_TASKS,
+  INSERT_TASK
 } from "../Actions/DashboardActions";
 
 const defaultState = {
@@ -21,6 +22,12 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
+
+    case INSERT_TASK:
+      return {...state,
+        sortedTasks: [action.task, ...state.sortedTasks]
+      }
+
     case SET_ALL_ACTIVE_TASKS:
       return {...state,
         tasks: action.tasks
