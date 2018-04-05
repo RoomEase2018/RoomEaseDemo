@@ -9,6 +9,8 @@ import axios from "axios";
 
 import { updateSortedTasks, setSortedTasks, pushSuccessQueryArray } from "../Actions/DashboardActions";
 
+// some comment
+
 const mapDispatchToProps = dispatch => {
   return {
     updateSortedTasks: (arr, arr_type, index) => {
