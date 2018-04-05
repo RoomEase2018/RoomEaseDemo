@@ -159,18 +159,12 @@ class UpNextContainer extends Component {
       ) {
       return (<div className="up_next"><p>loading</p></div>)
     } 
-<<<<<<< HEAD
+
     else if (!successQueries.sortedTasks) {
       this.props.pushSuccessQueryArray('sortedTasks');
       this.props.setSortedTasks(this.sortTasks());
       return (<div>loading</div>)
-=======
-    else if (this.state.isSorted === false) {
-      this.sortTasks();
-      return (
-        <div>loading</div>
-      )
->>>>>>> 7dc61f273997e985d3eb0005f1f70cf58b092ed0
+
     }
     else {
       const { index } = this.state;
