@@ -95,8 +95,8 @@ class UpNextContainer extends Component {
       ) {
       return (<div className="up_next"><p>loading</p></div>)
     } 
-    else if (!successQueries.pushSuccessQueryArray) {
-      this.props.pushSuccessQueryArray('pushSuccessQueryArray');
+    else if (!successQueries.sortedTasks) {
+      this.props.pushSuccessQueryArray('sortedTasks');
       this.props.setSortedTasks(this.sortTasks());
       return (<div>loading</div>)
     }

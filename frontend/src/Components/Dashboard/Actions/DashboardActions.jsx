@@ -8,6 +8,7 @@ export const PUSH_SUCCESS_QUERY_ARRAY = "PUSH_SUCCESS_QUERY_ARRAY"
 export const SET_ALL_COMPLETED_TASKS = "SET_ALL_COMPLETED_TASKS"
 export const UPDATE_SORTED_TASKS = "UPDATE_SORTED_TASKS"
 export const SET_SORTED_TASKS = "SET_SORTED_TASKS"
+export const INSERT_TASK = "INSERT_TASK"
 
 
 // helper functions
@@ -100,6 +101,13 @@ export const updateSortedTasks = (index) => {
   return {
     type: UPDATE_SORTED_TASKS,
     index
+  }
+}
+
+export const insertTask = task => {
+  return {
+    type: INSERT_TASK,
+    task
   }
 }
 
